@@ -1,0 +1,25 @@
+name: MythicDamageTop
+version: 1.0.0
+main: me.sasumo.mythicdamagetop.MythicDamageTopPlugin
+api-version: '26.2'
+author: Zetacraft
+depend: [MythicMobs]
+softdepend: [PlaceholderAPI]
+
+commands:
+  bossspawn:
+    description: Spawnea un boss de MythicMobs configurado en mobs.yml
+    usage: /bossspawn <mobId> <x> <y> <z> <mundo> [cantidad]
+    permission: mythicdamagetop.bossspawn
+  mdt:
+    description: Comando administrativo de MythicDamageTop
+    usage: /mdt reload
+    permission: mythicdamagetop.admin
+
+permissions:
+  mythicdamagetop.bossspawn:
+    description: Permite usar /bossspawn
+    default: op
+  mythicdamagetop.admin:
+    description: Permite recargar la configuracion del plugin
+    default: op

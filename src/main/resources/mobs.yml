@@ -1,0 +1,67 @@
+# ================================
+#   MythicDamageTop - mobs.yml
+# ================================
+# La clave (ej: DragonKing) debe ser EXACTAMENTE el
+# Internal Name del mob en MythicMobs. No maneja display-name
+# ni nada visual del mob: eso lo controla MythicMobs.
+
+mobs:
+  DragonKing:
+    enabled: true
+
+    top:
+      size: 5
+      rewards:
+        1:
+          commands:
+            - "eco give %player_name% 5000"
+            - "crate give %player_name% legendary 1"
+          message: "&6&l¡Ganaste el 1er puesto contra %mob_name%!"
+          title: "&6&l#1"
+          subtitle: "&e%damage% (%damage_percent%%)"
+        2:
+          commands:
+            - "eco give %player_name% 2500"
+          message: "&e¡2do puesto!"
+          title: "&e&l#2"
+          subtitle: "&7%damage% (%damage_percent%%)"
+        3:
+          commands:
+            - "eco give %player_name% 1000"
+          message: "&7¡3er puesto!"
+          title: "&7&l#3"
+          subtitle: "&7%damage% (%damage_percent%%)"
+        4:
+          commands:
+            - "eco give %player_name% 500"
+          message: "&7¡Top 5!"
+          title: "&7&l#4"
+          subtitle: "&7%damage% (%damage_percent%%)"
+        5:
+          commands:
+            - "eco give %player_name% 500"
+          message: "&7¡Top 5!"
+          title: "&7&l#5"
+          subtitle: "&7%damage% (%damage_percent%%)"
+
+    announce:
+      # %top_1_name%, %top_1_damage%, %top_1_damage_percent%, %top_2_name%... según top.size
+      lines:
+        - "&8&m----------------------------"
+        - "&c&l%mob_name% &7ha sido derrotado!"
+        - "&6#1 &f%top_1_name% &7- &e%top_1_damage% &7(&e%top_1_damage_percent%%&7)"
+        - "&e#2 &f%top_2_name% &7- &e%top_2_damage% &7(&e%top_2_damage_percent%%&7)"
+        - "&7#3 &f%top_3_name% &7- &e%top_3_damage% &7(&e%top_3_damage_percent%%&7)"
+        - "&8&m----------------------------"
+
+    spawn-message:
+      lines:
+        - "&8&m----------------------------"
+        - "&c&l¡%mob_name% ha despertado!"
+        - "&7Ubicación: &f%world% %x%, %y%, %z%"
+        - "&8&m----------------------------"
+
+    spawn-command:
+      default-amount: 1
+      max-amount: 5
+      default-facing: SOUTH

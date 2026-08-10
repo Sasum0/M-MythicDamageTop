@@ -1,0 +1,38 @@
+# ================================
+#   MythicDamageTop - config.yml
+# ================================
+
+settings:
+  debug: false
+  update-checker: true
+
+storage:
+  # MEMORY: se pierde al reiniciar el server (aceptado, no es crítico)
+  type: MEMORY
+
+combat:
+  # Segundos sin recibir daño para dar por terminado el combate
+  timeout-seconds: 15
+  # Solo cuenta como "qualify" a partir de este daño acumulado
+  minimum-damage-to-qualify: 1
+  # Solo se registra daño directo al boss (no summons/adds propios del boss)
+
+top:
+  # Tamaño máximo permitido al configurar un mob en mobs.yml
+  max-size: 20
+  # Resetear el top cada vez que el mob vuelve a spawnear
+  reset-on-respawn: true
+
+broadcast:
+  # El anuncio de fin de combate y el spawn-message se envían a TODO el server
+  # 0 = todas las líneas salen juntas, N = delay en ticks entre cada línea
+  line-delay-ticks: 0
+
+command:
+  bossspawn:
+    # Permiso único, aplica a todos los mobs configurados en mobs.yml
+    permission: mythicdamagetop.bossspawn
+    allow-amount-argument: true
+
+placeholderapi:
+  enabled: true
